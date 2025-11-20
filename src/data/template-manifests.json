@@ -1,0 +1,485 @@
+{
+    "templates": [
+        {
+            "name": "Starter Landing",
+            "slug": "starter-landing",
+            "tier": "basic",
+            "description": "Clean, high-conversion landing page with CSS micro-animations. Perfect for launching your product or service with a professional first impression.",
+            "features": [
+                "Hero section with CTA",
+                "Feature grid layout",
+                "Contact form",
+                "Responsive design",
+                "CSS animations",
+                "SEO optimized"
+            ],
+            "logic": {
+                "requiresAuth": false,
+                "requiresDashboard": false,
+                "requiresRealtime": false,
+                "requiresAdmin": false,
+                "requiresStorefront": false
+            },
+            "preview": {
+                "lottie": "previews/basic/starter-landing/preview.json",
+                "video": null,
+                "poster": "previews/basic/starter-landing/poster.png",
+                "mock": true,
+                "fallback": "auto-generate mock animation if missing",
+                "mockAnimation": {
+                    "type": "css-shimmer",
+                    "elements": [
+                        "hero-text-fade",
+                        "button-pulse",
+                        "section-slide-in"
+                    ]
+                }
+            },
+            "delivery": {
+                "starterFiles": [
+                    "templates/basic/starter-landing/index.html",
+                    "templates/basic/starter-landing/styles.css",
+                    "templates/basic/starter-landing/assets/"
+                ],
+                "enforceTier": true,
+                "lockedForLowerTiers": false,
+                "workspaceSetup": "copy only the correct tier-specific starter files into user workspace"
+            }
+        },
+        {
+            "name": "Micro-SaaS Promo",
+            "slug": "micro-saas-promo",
+            "tier": "basic",
+            "description": "Perfect for launching your first SaaS product. Includes pricing table, feature highlights, and email capture functionality.",
+            "features": [
+                "Pricing table",
+                "FAQ section",
+                "Feature highlights",
+                "Email capture form",
+                "Testimonials section",
+                "Mobile responsive"
+            ],
+            "logic": {
+                "requiresAuth": false,
+                "requiresDashboard": false,
+                "requiresRealtime": false,
+                "requiresAdmin": false,
+                "requiresStorefront": false
+            },
+            "preview": {
+                "lottie": "previews/basic/micro-saas/preview.json",
+                "video": null,
+                "poster": "previews/basic/micro-saas/poster.png",
+                "mock": true,
+                "fallback": "auto-generate mock animation if missing",
+                "mockAnimation": {
+                    "type": "css-shimmer",
+                    "elements": [
+                        "pricing-card-flip",
+                        "feature-fade-in",
+                        "cta-pulse"
+                    ]
+                }
+            },
+            "delivery": {
+                "starterFiles": [
+                    "templates/basic/micro-saas/index.html",
+                    "templates/basic/micro-saas/styles.css",
+                    "templates/basic/micro-saas/assets/"
+                ],
+                "enforceTier": true,
+                "lockedForLowerTiers": false,
+                "workspaceSetup": "copy only the correct tier-specific starter files into user workspace"
+            }
+        },
+        {
+            "name": "Dev Portfolio",
+            "slug": "dev-portfolio",
+            "tier": "basic",
+            "description": "Showcase your work with a simple, static grid layout. Perfect for developers, designers, and creatives.",
+            "features": [
+                "Project grid",
+                "About section",
+                "Social links",
+                "Contact info",
+                "Skills showcase",
+                "Resume download"
+            ],
+            "logic": {
+                "requiresAuth": false,
+                "requiresDashboard": false,
+                "requiresRealtime": false,
+                "requiresAdmin": false,
+                "requiresStorefront": false
+            },
+            "preview": {
+                "lottie": "previews/basic/dev-portfolio/preview.json",
+                "video": null,
+                "poster": "previews/basic/dev-portfolio/poster.png",
+                "mock": true,
+                "fallback": "auto-generate mock animation if missing",
+                "mockAnimation": {
+                    "type": "css-shimmer",
+                    "elements": [
+                        "project-card-hover",
+                        "skill-bar-fill",
+                        "social-icon-bounce"
+                    ]
+                }
+            },
+            "delivery": {
+                "starterFiles": [
+                    "templates/basic/dev-portfolio/index.html",
+                    "templates/basic/dev-portfolio/styles.css",
+                    "templates/basic/dev-portfolio/assets/"
+                ],
+                "enforceTier": true,
+                "lockedForLowerTiers": false,
+                "workspaceSetup": "copy only the correct tier-specific starter files into user workspace"
+            }
+        },
+        {
+            "name": "Auth App Shell",
+            "slug": "auth-app-shell",
+            "tier": "pro",
+            "description": "Complete boilerplate with authentication flows ready to go. Includes login, signup, password reset, and session management.",
+            "features": [
+                "Login/Signup pages",
+                "Password reset flow",
+                "Session management",
+                "Protected routes",
+                "User profile page",
+                "Email verification",
+                "OAuth integration ready"
+            ],
+            "logic": {
+                "requiresAuth": true,
+                "requiresDashboard": true,
+                "requiresRealtime": false,
+                "requiresAdmin": false,
+                "requiresStorefront": false
+            },
+            "preview": {
+                "lottie": "previews/pro/auth-shell/preview.json",
+                "video": "previews/pro/auth-shell/demo.mp4",
+                "poster": "previews/pro/auth-shell/poster.png",
+                "mock": true,
+                "fallback": "auto-generate mock animation if missing",
+                "mockAnimation": {
+                    "type": "lottie-with-fallback",
+                    "elements": [
+                        "login-modal-slide",
+                        "form-field-focus",
+                        "success-checkmark",
+                        "dashboard-fade-in"
+                    ]
+                }
+            },
+            "delivery": {
+                "starterFiles": [
+                    "templates/pro/auth-shell/src/",
+                    "templates/pro/auth-shell/components/",
+                    "templates/pro/auth-shell/auth/",
+                    "templates/pro/auth-shell/config/"
+                ],
+                "enforceTier": true,
+                "lockedForLowerTiers": true,
+                "workspaceSetup": "copy only the correct tier-specific starter files into user workspace"
+            }
+        },
+        {
+            "name": "Dashboard App",
+            "slug": "dashboard-app",
+            "tier": "pro",
+            "description": "Feature-rich dashboard with interactive widgets, charts, and data visualization. Perfect for SaaS applications.",
+            "features": [
+                "Interactive dashboard",
+                "Chart components",
+                "Data tables",
+                "Widget system",
+                "Dark mode toggle",
+                "Responsive sidebar",
+                "Settings panel"
+            ],
+            "logic": {
+                "requiresAuth": true,
+                "requiresDashboard": true,
+                "requiresRealtime": false,
+                "requiresAdmin": false,
+                "requiresStorefront": false
+            },
+            "preview": {
+                "lottie": "previews/pro/dashboard/preview.json",
+                "video": "previews/pro/dashboard/demo.mp4",
+                "poster": "previews/pro/dashboard/poster.png",
+                "mock": true,
+                "fallback": "auto-generate mock animation if missing",
+                "mockAnimation": {
+                    "type": "lottie-with-fallback",
+                    "elements": [
+                        "widget-load",
+                        "chart-draw",
+                        "sidebar-slide",
+                        "data-update"
+                    ]
+                }
+            },
+            "delivery": {
+                "starterFiles": [
+                    "templates/pro/dashboard/src/",
+                    "templates/pro/dashboard/components/",
+                    "templates/pro/dashboard/widgets/",
+                    "templates/pro/dashboard/charts/"
+                ],
+                "enforceTier": true,
+                "lockedForLowerTiers": true,
+                "workspaceSetup": "copy only the correct tier-specific starter files into user workspace"
+            }
+        },
+        {
+            "name": "Creator Storefront",
+            "slug": "creator-storefront",
+            "tier": "pro",
+            "description": "Sell digital products with a built-in storefront. Includes product grid, cart logic, and checkout flow.",
+            "features": [
+                "Product grid",
+                "Cart system",
+                "Checkout flow",
+                "Order management",
+                "Product pages",
+                "Payment integration",
+                "Download delivery"
+            ],
+            "logic": {
+                "requiresAuth": true,
+                "requiresDashboard": true,
+                "requiresRealtime": false,
+                "requiresAdmin": false,
+                "requiresStorefront": true
+            },
+            "preview": {
+                "lottie": "previews/pro/storefront/preview.json",
+                "video": "previews/pro/storefront/demo.mp4",
+                "poster": "previews/pro/storefront/poster.png",
+                "mock": true,
+                "fallback": "auto-generate mock animation if missing",
+                "mockAnimation": {
+                    "type": "lottie-with-fallback",
+                    "elements": [
+                        "product-card-hover",
+                        "cart-add",
+                        "checkout-modal",
+                        "payment-success"
+                    ]
+                }
+            },
+            "delivery": {
+                "starterFiles": [
+                    "templates/pro/storefront/src/",
+                    "templates/pro/storefront/components/",
+                    "templates/pro/storefront/store/",
+                    "templates/pro/storefront/checkout/"
+                ],
+                "enforceTier": true,
+                "lockedForLowerTiers": true,
+                "workspaceSetup": "copy only the correct tier-specific starter files into user workspace"
+            }
+        },
+        {
+            "name": "Admin Console",
+            "slug": "admin-console",
+            "tier": "premium",
+            "description": "Full-featured admin dashboard for managing users, data, and system settings. Includes analytics, user management, and activity logs.",
+            "features": [
+                "Analytics dashboard",
+                "User management",
+                "Settings panel",
+                "Activity logs",
+                "Role-based access",
+                "Data export",
+                "System monitoring",
+                "Advanced charts"
+            ],
+            "logic": {
+                "requiresAuth": true,
+                "requiresDashboard": true,
+                "requiresRealtime": true,
+                "requiresAdmin": true,
+                "requiresStorefront": false
+            },
+            "preview": {
+                "lottie": "previews/premium/admin-console/preview.json",
+                "video": "previews/premium/admin-console/demo.mp4",
+                "poster": "previews/premium/admin-console/poster.png",
+                "mock": true,
+                "fallback": "auto-generate mock animation if missing",
+                "mockAnimation": {
+                    "type": "lottie-with-video",
+                    "elements": [
+                        "admin-panel-load",
+                        "chart-animate",
+                        "user-table-update",
+                        "realtime-indicator"
+                    ]
+                }
+            },
+            "delivery": {
+                "starterFiles": [
+                    "templates/premium/admin-console/src/",
+                    "templates/premium/admin-console/components/",
+                    "templates/premium/admin-console/admin/",
+                    "templates/premium/admin-console/analytics/",
+                    "templates/premium/admin-console/realtime/"
+                ],
+                "enforceTier": true,
+                "lockedForLowerTiers": true,
+                "workspaceSetup": "copy only the correct tier-specific starter files into user workspace"
+            }
+        },
+        {
+            "name": "Marketplace Platform",
+            "slug": "marketplace-platform",
+            "tier": "premium",
+            "description": "Multi-vendor marketplace platform with vendor profiles, commission logic, realtime chat, and payment processing.",
+            "features": [
+                "Vendor profiles",
+                "Commission system",
+                "Realtime chat",
+                "Payment processing",
+                "Product listings",
+                "Order tracking",
+                "Review system",
+                "Admin dashboard"
+            ],
+            "logic": {
+                "requiresAuth": true,
+                "requiresDashboard": true,
+                "requiresRealtime": true,
+                "requiresAdmin": true,
+                "requiresStorefront": true
+            },
+            "preview": {
+                "lottie": "previews/premium/marketplace/preview.json",
+                "video": "previews/premium/marketplace/demo.mp4",
+                "poster": "previews/premium/marketplace/poster.png",
+                "mock": true,
+                "fallback": "auto-generate mock animation if missing",
+                "mockAnimation": {
+                    "type": "lottie-with-video",
+                    "elements": [
+                        "marketplace-scroll",
+                        "vendor-modal",
+                        "chat-message",
+                        "order-update"
+                    ]
+                }
+            },
+            "delivery": {
+                "starterFiles": [
+                    "templates/premium/marketplace/src/",
+                    "templates/premium/marketplace/components/",
+                    "templates/premium/marketplace/vendor/",
+                    "templates/premium/marketplace/marketplace/",
+                    "templates/premium/marketplace/chat/",
+                    "templates/premium/marketplace/admin/"
+                ],
+                "enforceTier": true,
+                "lockedForLowerTiers": true,
+                "workspaceSetup": "copy only the correct tier-specific starter files into user workspace"
+            }
+        },
+        {
+            "name": "Realtime Collaboration App",
+            "slug": "realtime-collab",
+            "tier": "premium",
+            "description": "Collaborative workspace with live cursors, presence system, live updates, and conflict resolution. Perfect for team collaboration tools.",
+            "features": [
+                "WebSocket integration",
+                "Presence system",
+                "Live cursors",
+                "Live updates",
+                "Conflict resolution",
+                "User avatars",
+                "Activity feed",
+                "Version history"
+            ],
+            "logic": {
+                "requiresAuth": true,
+                "requiresDashboard": true,
+                "requiresRealtime": true,
+                "requiresAdmin": false,
+                "requiresStorefront": false
+            },
+            "preview": {
+                "lottie": "previews/premium/realtime-collab/preview.json",
+                "video": "previews/premium/realtime-collab/demo.mp4",
+                "poster": "previews/premium/realtime-collab/poster.png",
+                "mock": true,
+                "fallback": "auto-generate mock animation if missing",
+                "mockAnimation": {
+                    "type": "lottie-with-video",
+                    "elements": [
+                        "cursor-move",
+                        "presence-indicator",
+                        "live-edit",
+                        "sync-animation"
+                    ]
+                }
+            },
+            "delivery": {
+                "starterFiles": [
+                    "templates/premium/realtime-collab/src/",
+                    "templates/premium/realtime-collab/components/",
+                    "templates/premium/realtime-collab/realtime/",
+                    "templates/premium/realtime-collab/websocket/",
+                    "templates/premium/realtime-collab/collaboration/"
+                ],
+                "enforceTier": true,
+                "lockedForLowerTiers": true,
+                "workspaceSetup": "copy only the correct tier-specific starter files into user workspace"
+            }
+        }
+    ],
+    "tierRules": {
+        "basic": {
+            "canAccess": [
+                "basic"
+            ],
+            "locked": [
+                "pro",
+                "premium"
+            ]
+        },
+        "pro": {
+            "canAccess": [
+                "basic",
+                "pro"
+            ],
+            "locked": [
+                "premium"
+            ]
+        },
+        "premium": {
+            "canAccess": [
+                "basic",
+                "pro",
+                "premium"
+            ],
+            "locked": []
+        }
+    },
+    "deliveryLog": {
+        "enabled": true,
+        "fields": [
+            "timestamp",
+            "userId",
+            "tier",
+            "templateSlug",
+            "filesDelivered",
+            "featuresDelivered",
+            "previewUsed"
+        ],
+        "storage": "firestore",
+        "collection": "template-deliveries"
+    }
+}

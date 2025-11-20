@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from "express";
 import Stripe from "stripe";
 import cors from "cors";
@@ -19,9 +20,9 @@ app.post("/create-checkout-session", async (req, res) => {
 
     // Server-side price enforcement
     const PLAN_TO_PRICE = {
-      Basic: { amount: 4000, name: "Basic" },
-      Pro: { amount: 7500, name: "Pro" },
-      Premium: { amount: 20000, name: "Premium" },
+      Basic: { amount: 4000, name: "Basic", description: "Standard animated profile template" },
+      Pro: { amount: 7500, name: "Pro", description: "Advanced template with custom colors & media" },
+      Premium: { amount: 20000, name: "Premium", description: "Fully custom design built from scratch" },
     };
     const selected = PLAN_TO_PRICE[plan];
     if (!selected) {
@@ -34,7 +35,10 @@ app.post("/create-checkout-session", async (req, res) => {
         {
           price_data: {
             currency: "usd",
-            product_data: { name: `${selected.name} Plan` },
+            product_data: {
+              name: `${selected.name} Plan`,
+              description: selected.description
+            },
             unit_amount: selected.amount,
           },
           quantity: 1,
@@ -45,10 +49,36 @@ app.post("/create-checkout-session", async (req, res) => {
       cancel_url: "http://localhost:5173/cancel.html",
     });
 
-    res.json({ id: session.id });
+    res.json({ id: session.id, url: session.url });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+
+// Integrity Check & Delivery Logging Endpoint
+app.post("/api/log-delivery", (req, res) => {
+  const { userId, userTier, templateId, templateTier } = req.body;
+
+  // Server-side Integrity Validation
+  const TIER_LEVELS = { Basic: 1, Pro: 2, Premium: 3 };
+
+  if (TIER_LEVELS[templateTier] > TIER_LEVELS[userTier]) {
+    console.warn(`[Security Alert] User ${userId} (${userTier}) attempted to access ${templateTier} template.`);
+    return res.status(403).json({ error: "Tier mismatch. Access denied." });
+  }
+
+  // Simulate Bundle Delivery Logic
+  let bundleType = "static-files";
+  if (templateTier === 'Pro') bundleType = "static + auth + lottie";
+  if (templateTier === 'Premium') bundleType = "full-source + admin + video-assets";
+
+  console.log(`[Delivery Log] Delivered ${templateId} (${bundleType}) to ${userId}`);
+
+  res.json({
+    success: true,
+    bundle: bundleType,
+    receipt: `rcpt_${Date.now()}`
+  });
 });
 
 const port = process.env.PORT || 4242;

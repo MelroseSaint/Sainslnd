@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - SaintsLND</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body class="bg-[#0b1121] text-white min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav
+        class="w-full p-6 flex justify-between items-center glass-container rounded-none border-x-0 border-t-0 sticky top-0 z-50">
+        <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-fuchsia-500">
+            SaintsLND <span class="text-xs text-gray-400 font-normal ml-2">Dashboard</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="text-sm text-gray-400">
+                Current Tier: <span id="user-tier-badge"
+                    class="font-bold text-white px-2 py-1 rounded bg-gray-700">Loading...</span>
+            </div>
+            <!-- Demo Controls -->
+            <select id="demo-tier-select" class="bg-gray-800 border border-gray-600 text-xs rounded p-1">
+                <option value="Basic">Simulate: Basic User</option>
+                <option value="Pro">Simulate: Pro User</option>
+                <option value="Premium">Simulate: Premium User</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow p-8 max-w-7xl mx-auto w-full">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold mb-2">Your Templates</h1>
+            <p class="text-gray-400">Access the templates and features included in your plan.</p>
+        </header>
+
+        <!-- Templates Grid -->
+        <div id="templates-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Templates injected by JS -->
+        </div>
+
+    </main>
+
+    <!-- Upgrade Modal -->
+    <div id="upgrade-modal"
+        class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100] p-4 backdrop-blur-sm">
+        <div class="glass-container p-8 max-w-md w-full text-center border-2 border-fuchsia-500/50">
+            <div class="text-5xl mb-4">🔒</div>
+            <h2 class="text-2xl font-bold mb-2 text-white">Upgrade to Unlock</h2>
+            <p class="text-gray-300 mb-6">This template requires the <span id="modal-required-tier"
+                    class="font-bold text-fuchsia-400">Pro</span> plan.</p>
+
+            <div class="space-y-3">
+                <button onclick="window.location.href='/'"
+                    class="w-full py-3 rounded-xl font-bold bg-gradient-to-r from-fuchsia-600 to-purple-600 hover:from-fuchsia-500 hover:to-purple-500 transition">
+                    View Upgrade Options
+                </button>
+                <button onclick="document.getElementById('upgrade-modal').classList.add('hidden')"
+                    class="w-full py-2 text-gray-400 hover:text-white transition">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/dashboard.js"></script>
+</body>
+
+</html>
